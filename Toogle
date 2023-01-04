@@ -1,0 +1,44 @@
+Activity_Main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:layout_gravity="center"
+android:orientation="vertical"
+tools:context=".MainActivity">
+<ToggleButton
+android:layout_width="wrap_content"
+android:onClick="onDefaultToggleClick"
+android:layout_height="wrap_content"
+android:layout_margin="10dp"/>
+<ToggleButton
+android:layout_width="50dp"
+android:textOn=""
+android:textOff=""
+android:background="@drawable/toggle_selector"
+android:onClick="OnCustomToggleClick"
+android:layout_height="wrap_content"
+android:layout_margin="10dp"/>
+</LinearLayout>
+
+Activity_Main.java
+package com.example.toggle;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
+public class MainActivity extends AppCompatActivity {
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+}
+public void OnCustomToggleClick(View view) {
+Toast.makeText(this, "CustomToggleClick", Toast.LENGTH_SHORT).show();
+}
+public void onDefaultToggleClick(View view) {
+Toast.makeText(this, "DefaultToggleClick", Toast.LENGTH_SHORT).show();
+}
+}
